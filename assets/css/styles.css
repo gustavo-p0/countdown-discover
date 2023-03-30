@@ -1,0 +1,224 @@
+:root {
+  font-size: 10px;
+}
+
+/* reset config */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+/* body */
+
+body {
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 133px;
+  background-image: url(../img/top-image.svg);
+  background-size: cover;
+  top: 0;
+  z-index: -1;
+}
+
+body::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  background-image: url(../img/bottom-image.svg);
+  background-size: cover;
+  width: 100%;
+  height: 229px;
+}
+
+/* main */
+main {
+  display: flex;
+  padding: 150px 60px 150px 123px;
+  max-width: 1400px;
+  margin-inline: auto;
+}
+
+main > section {
+  flex-grow: 1;
+}
+
+section > h1 {
+  color: #6c63ff;
+  font-weight: 700;
+  font-size: 3.6rem;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-bottom: 20px;
+}
+section > #timer {
+}
+
+section > footer {
+  margin-top: 46px;
+}
+
+main > figure {
+  flex-basis: 607px;
+}
+
+figure > img {
+  width: 100%;
+}
+
+/* timer */
+
+#timer {
+  margin: 19px 0px;
+  display: grid;
+  grid-template-columns: repeat(7, auto);
+  grid-template-rows: repeat(2, min-content);
+  grid-template-areas:
+    "days-leg span-1 hours-leg span-2 min-leg span-3 sec-leg"
+    "days span-1 hours span-2 min  span-3 sec";
+  row-gap: 20px;
+  column-gap: 15px;
+}
+
+#timer > * {
+  justify-self: center;
+}
+
+#days-legend {
+  grid-area: days-leg;
+}
+
+#hours-legend {
+  grid-area: hours-leg;
+}
+
+#minutes-legend {
+  grid-area: min-leg;
+}
+
+#seconds-legend {
+  grid-area: sec-leg;
+}
+
+#days,
+#hours,
+#minutes,
+#seconds,
+#span-1,
+#span-2,
+#span-3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 7.2rem;
+}
+
+#days-legend,
+#hours-legend,
+#minutes-legend,
+#seconds-legend {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+  text-transform: capitalize;
+  color: #c8c8c8;
+}
+#span-1 {
+  grid-area: span-1;
+}
+
+#span-2 {
+  grid-area: span-2;
+}
+
+#span-3 {
+  grid-area: span-3;
+}
+
+#span-1,
+#span-2,
+#span-3 {
+  align-self: end;
+}
+/* footer */
+
+footer {
+  text-align: center;
+}
+
+footer p {
+  font-size: 1.4rem;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  color: #9c9ab6;
+}
+
+footer button {
+  margin-top: 32px;
+  height: 46px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 32px;
+  background-color: #6c63ff;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+}
+
+@media (max-width: 1000px) {
+  figure {
+    display: none;
+  }
+  main {
+    padding: 150px 60px 150px 60px;
+  }
+}
+
+@media (max-width: 650px) {
+  section > h1 {
+    font-size: 1.8rem;
+  }
+  #timer {
+    column-gap: 5px;
+  }
+
+  #days,
+  #hours,
+  #minutes,
+  #seconds,
+  #span-1,
+  #span-2,
+  #span-3 {
+    font-size: 3.6rem;
+  }
+}
+
+@media (max-width: 400px) {
+  main {
+    padding: 150px 20px 150px 20px;
+  }
+
+  #days,
+  #hours,
+  #minutes,
+  #seconds,
+  #span-1,
+  #span-2,
+  #span-3 {
+    font-size: 1.8rem;
+  }
+}
